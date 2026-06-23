@@ -8,12 +8,15 @@ class Escolar(models.Model):
     ]
     
     nombre = models.CharField(max_length=100)
+
     categoria = models.CharField(
         max_length=20,
         choices=OPCIONES_CATEGORIA,
         default='TEXTO'
     )
+    
     stock = models.IntegerField(validators=[MinValueValidator(0,message="el stock no puede ser negativo")])
+
     ubicacion = models.CharField(max_length=100)
 
 
